@@ -32,7 +32,7 @@ The app's dashboard supports typical operations like showing local files, openin
 
 ## Why Use Jupyter Notebooks for Web Scraping?
 
-Some design specifics of Jupyter Notebooks make them very useful for web scraping purposes:
+Some design specifics of Jupyter Notebooks make them very useful for [web scraping](https://brightdata.com/blog/how-tos/what-is-web-scraping) purposes:
 
 - **Interactive Development**: Write and execute code in small, manageable chunks called cells. Each cell operates independently, simplifying testing and debugging.
 - **Organized Documentation**: Use Markdown within cells to document code, explain logic, and provide notes or instructions.  
@@ -274,6 +274,6 @@ Here are some of the other possible uses for Jupyter Notebooks:
 
 While Jupyter Notebooks can be a powerful tool for web scraping, they are not the most efficient solution when it comes to scaling your web scraping operations or automating tasks.
 
-Bright Data's [Web Scrapers](https://brightdata.com/products/web-scraper) simplify and enhance your data collection efforts. They feature dedicated endpoints for 100+ domains, bulk request handling, automatic IP rotation, and CAPTCHA solving.
+Bright Data's [Web Scrapers](https://brightdata.com/products/web-scraper) simplify and enhance your data collection efforts. They feature dedicated endpoints for 100+ domains, bulk request handling, automatic IP rotation, and [CAPTCHA solving](https://github.com/luminati-io/Captcha-solver).
 
 Create a free Bright Data account today to try out our scraping solutions and test our proxies!
