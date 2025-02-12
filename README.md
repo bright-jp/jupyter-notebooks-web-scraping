@@ -20,15 +20,15 @@ This guide explains how to perform web scraping using use Jupyter Notebooks with
 
 The Jupyter Notebook App is a server-client application that allows editing and running [notebook documents](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html#notebook-document) via a web browser. A Jupyter [notebook](https://docs.jupyter.org/en/latest/) is “a shareable document that combines computer code, plain language descriptions, data, charts, graphs and figures, and interactive controls.” You can run the notebook application as a desktop application or install it on a remote server.
 
-![The Jupyter Notebook App interface](https://brightdata.com/wp-content/uploads/2025/01/image-85-1024x250.png)
+![The Jupyter Notebook App interface](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-85.png)
 
 Jupyter Notebooks are built around a "kernel," a computational engine responsible for executing the code within a Notebook document. Specifically, the `ipython` kernel runs Python code, though kernels for other languages are also available.
 
-![Launching a new document via the ipython kernel](https://brightdata.com/wp-content/uploads/2025/01/image-86.png)
+![Launching a new document via the ipython kernel](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-86.png)
 
 The app's dashboard supports typical operations like showing local files, opening existing notebook documents, managing documents’ kernels, and more:
 
-![The Jupyter Notebooks’ dashboard](https://brightdata.com/wp-content/uploads/2025/01/image-87-1024x272.png)
+![The Jupyter Notebooks’ dashboard](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-87.png)
 
 ## Why Use Jupyter Notebooks for Web Scraping?
 
@@ -109,11 +109,11 @@ You can now access your Jupyter Notebook App via the `locahost:8888`.
 
 Create a new file by clicking on the “New > Python 3” option:
 
-![Creating a new Jupyter Notebook file](https://brightdata.com/wp-content/uploads/2025/01/image-84.png)
+![Creating a new Jupyter Notebook file](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-84.png)
 
 The new file will be automatically called `untitled.ipynb`. Rename it to `analysis.ipynb` in the dashboard:
 
-![Renaming a Jupyter Notebook file](https://brightdata.com/wp-content/uploads/2025/01/image-83-1024x390.png)
+![Renaming a Jupyter Notebook file](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-83.png)
 
 Here is your project's structure at the end of this step:
 
@@ -127,7 +127,7 @@ scraper/
 
 Let's scrape the data from the website [worldometer](https://www.worldometers.info/) and use the target page related to [CO2 emissions in the United States](https://www.worldometers.info/co2-emissions/us-co2-emissions/) per year that provides this tabular data:
 
-![The tabular data about the C02 emissions per year in United States](https://brightdata.com/wp-content/uploads/2025/01/image-82.png)
+![The tabular data about the C02 emissions per year in United States](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-82.png)
 
 ### Step 3: Retrieve the Data
 
@@ -183,7 +183,7 @@ You can paste this code into a cell and run it by pressing `SHIFT+ENTER`.
 
 Another way to run the cell is to select it and press the “Run” button in the dashboard:
 
-![Running a cell in a Jupyter Notebook](https://brightdata.com/wp-content/uploads/2025/01/image-81-1024x709.png)
+![Running a cell in a Jupyter Notebook](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-81.png)
 
 ### Step 4: Ensure Data Is Correct
 
@@ -207,7 +207,7 @@ This code does the following:
 
 This is the expected result:
 
-![The first five rows of the data frame](https://brightdata.com/wp-content/uploads/2025/01/image-80-1024x238.png)
+![The first five rows of the data frame](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-80.png)
 
 ### Step 5: Visualize the Data
 
@@ -254,13 +254,13 @@ Here is what this code does:
 
 Here is the expected result:
 
-![The resulting plot](https://brightdata.com/wp-content/uploads/2025/01/image-79.png)
+![The resulting plot](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-79.png)
 
 ### Step #6: Put It All Together
 
 Your entire Jupyter Notebook for web scraping will look like this:
 
-![The entire Jupyter Notebook document](https://brightdata.com/wp-content/uploads/2025/01/image-78.png)
+![The entire Jupyter Notebook document](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-78.png)
 
 ## Use Cases of Jupyter Notebook Web Scraping
 
