@@ -1,121 +1,121 @@
-# Web Scraping With Jupyter Notebooks
+# Jupyter NotebooksでのWebスクレイピング
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.com/) 
+[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/) 
 
-This guide explains how to perform web scraping using use Jupyter Notebooks with interactive coding, data analysis, and visualization.
+このガイドでは、インタラクティブなコーディング、データ分析、可視化を行えるJupyter Notebooksを使用してWebスクレイピングを実行する方法を説明します。
 
-- [What Are Jupyter Notebooks?](#what-are-jupyter-notebooks)
-- [Why Use Jupyter Notebooks for Web Scraping?](#why-use-jupyter-notebooks-for-web-scraping)
-- [How to Use Jupyter Notebooks for Web Scraping](#how-to-use-jupyter-notebooks-for-web-scraping)
-  - [Step 1: Set Up the Environment and Install Dependencies](#step-1-set-up-the-environment-and-install-dependencies)
-  - [Step 2: Define the Target Page](#step-2-define-the-target-page)
-  - [Step 3: Retrieve the Data](#step-3-retrieve-the-data)
-  - [Step 4: Ensure Data Is Correct](#step-4-ensure-data-is-correct)
-  - [Step 5: Visualize the Data](#step-5-visualize-the-data)
-  - [Step 6: Put It All Together](#step-6-put-it-all-together)
-- [Use Cases of Jupyter Notebook Web Scraping](#use-cases-of-jupyter-notebook-web-scraping)
-- [Conclusion](#conclusion)
+- [Jupyter Notebooksとは？](#what-are-jupyter-notebooks)
+- [WebスクレイピングにJupyter Notebooksを使う理由](#why-use-jupyter-notebooks-for-web-scraping)
+- [Jupyter NotebooksをWebスクレイピングに使う方法](#how-to-use-jupyter-notebooks-for-web-scraping)
+  - [ステップ1: 環境をセットアップして依存関係をインストールする](#step-1-set-up-the-environment-and-install-dependencies)
+  - [ステップ2: 対象ページを定義する](#step-2-define-the-target-page)
+  - [ステップ3: データを取得する](#step-3-retrieve-the-data)
+  - [ステップ4: データが正しいことを確認する](#step-4-ensure-data-is-correct)
+  - [ステップ5: データを可視化する](#step-5-visualize-the-data)
+  - [ステップ6: すべてをまとめる](#step-6-put-it-all-together)
+- [Jupyter Notebook Webスクレイピングのユースケース](#use-cases-of-jupyter-notebook-web-scraping)
+- [結論](#conclusion)
 
 ## What Are Jupyter Notebooks?
 
-The Jupyter Notebook App is a server-client application that allows editing and running [notebook documents](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html#notebook-document) via a web browser. A Jupyter [notebook](https://docs.jupyter.org/en/latest/) is “a shareable document that combines computer code, plain language descriptions, data, charts, graphs and figures, and interactive controls.” You can run the notebook application as a desktop application or install it on a remote server.
+Jupyter Notebook Appは、Webブラウザ経由で[notebook documents](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html#notebook-document)を編集・実行できるサーバー/クライアントアプリケーションです。Jupyterの[notebook](https://docs.jupyter.org/en/latest/)は、「コンピューターコード、平易な言語による説明、データ、チャート、グラフや図、そしてインタラクティブなコントロールを組み合わせた共有可能なドキュメント」です。Notebookアプリケーションはデスクトップアプリとして実行することも、リモートサーバーにインストールすることもできます。
 
 ![The Jupyter Notebook App interface](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-85.png)
 
-Jupyter Notebooks are built around a "kernel," a computational engine responsible for executing the code within a Notebook document. Specifically, the `ipython` kernel runs Python code, though kernels for other languages are also available.
+Jupyter Notebooksは「kernel」を中心に構築されており、これはNotebookドキュメント内のコードを実行する計算エンジンです。具体的には、`ipython` kernelがPythonコードを実行しますが、他の言語向けのkernelも利用できます。
 
 ![Launching a new document via the ipython kernel](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-86.png)
 
-The app's dashboard supports typical operations like showing local files, opening existing notebook documents, managing documents’ kernels, and more:
+アプリのダッシュボードでは、ローカルファイルの表示、既存のnotebook documentsのオープン、ドキュメントのkernel管理など、一般的な操作をサポートしています。
 
 ![The Jupyter Notebooks’ dashboard](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-87.png)
 
 ## Why Use Jupyter Notebooks for Web Scraping?
 
-Some design specifics of Jupyter Notebooks make them very useful for [web scraping](https://brightdata.com/blog/how-tos/what-is-web-scraping) purposes:
+Jupyter Notebooksのいくつかの設計上の特性により、[web scraping](https://brightdata.jp/blog/how-tos/what-is-web-scraping)用途で非常に有用です。
 
-- **Interactive Development**: Write and execute code in small, manageable chunks called cells. Each cell operates independently, simplifying testing and debugging.
-- **Organized Documentation**: Use Markdown within cells to document code, explain logic, and provide notes or instructions.  
-- **Seamless Data Analysis Integration**: Process and analyze scraped data immediately with Python libraries like `pandas`, `matplotlib`, `seaborn`, and more.
-- **Reproducibility and Sharing**: Easily share Jupyter Notebooks as `.ipynb` files or convert them to formats such as [ReST](https://docutils.sourceforge.io/rst.html), Markdown, and others.
+- **インタラクティブな開発**: セルと呼ばれる小さく扱いやすい単位でコードを書いて実行します。各セルは独立して動作するため、テストやデバッグが簡単になります。
+- **整理されたドキュメント化**: セル内でMarkdownを使用してコードを文書化し、ロジックを説明し、メモや手順を記載できます。  
+- **データ分析とのシームレスな統合**: `pandas`、`matplotlib`、`seaborn`などのPythonライブラリで、スクレイピングしたデータをすぐに処理・分析できます。
+- **再現性と共有**: Jupyter Notebooksを`.ipynb`ファイルとして簡単に共有でき、[ReST](https://docutils.sourceforge.io/rst.html)、Markdownなどの形式に変換することもできます。
 
 ### Pros and Cons
 
-These are the pros and cons of using Jupyter Notebooks for data scraping:
+以下は、データスクレイピングにJupyter Notebooksを使用するメリットとデメリットです。
 
 #### **Pros**
 
-- **Step-by-Step Debugging**: Each cell runs independently, allowing you to break down your data extraction code into smaller sections. This makes it easier to debug by running individual cells and identifying issues at a granular level.  
-- **Comprehensive Documentation**: Use Markdown within cells to document your scraping code, explain its functionality, and justify design decisions.  
-- **Flexibility**: Jupyter Notebooks enable seamless integration of web scraping, data cleaning, and analysis in a single environment. This eliminates the need to switch between different tools like an IDE for scraping and another environment for analysis.  
+- **ステップバイステップのデバッグ**: 各セルは独立して実行されるため、データ抽出コードをより小さなセクションに分割できます。個々のセルを実行して、粒度の細かいレベルで問題を特定しやすくなります。  
+- **包括的なドキュメント化**: セル内でMarkdownを使用してスクレイピングコードを文書化し、その機能を説明し、設計上の判断を正当化できます。  
+- **柔軟性**: Jupyter Notebooksでは、Webスクレイピング、データクレンジング、分析を単一の環境でシームレスに統合できます。これにより、スクレイピング用のIDEと分析用の別環境といった複数ツールを切り替える必要がなくなります。  
 
 **Cons**  
 
-- **Not Ideal for Large-Scale Projects**: Notebooks tend to become lengthy and unwieldy, making them less suitable for large-scale data scraping projects.
-- **Performance Limitations**: Working with large datasets or running long scripts can slow down or even freeze Jupyter Notebooks.
-- **Limited for Automation**: Jupyter Notebooks are designed for interactive, manual execution rather than scheduled or automated workflows. If you need to run your scraper on a schedule or integrate it into a larger system, a script-based approach is more suitable.
+- **大規模プロジェクトには不向き**: Notebookは長くなりがちで扱いにくくなるため、大規模なデータスクレイピングプロジェクトには適しにくいです。
+- **パフォーマンスの制限**: 大規模データセットを扱ったり、長時間動作するスクリプトを実行したりすると、Jupyter Notebooksが遅くなったり、フリーズしたりすることがあります。
+- **自動化には限定的**: Jupyter Notebooksは、スケジュール実行や自動化されたワークフローではなく、インタラクティブで手動の実行を想定して設計されています。スクレイパーをスケジュールで動かしたい場合や、より大きなシステムに統合したい場合は、スクリプトベースのアプローチの方が適しています。
 
 ## How to Use Jupyter Notebooks for Web Scraping
 
 ### Step 1: Set Up the Environment and Install Dependencies
 
-You need to have Python 3.6 or newer installed to be able to replicate this tutorial.
+このチュートリアルを再現するには、Python 3.6以降がインストールされている必要があります。
 
-Create the `venv/` [virtual environment](https://docs.python.org/3/library/venv.html) directory:
+`venv/` [virtual environment](https://docs.python.org/3/library/venv.html)ディレクトリを作成します。
 
 ```bash
 python -m venv venv
 ```
 
-To activate it, on Windows, run:
+有効化するには、Windowsでは次を実行します。
 
 ```bash
 venv\Scripts\activate
 ```
 
-On macOS/Linux:
+macOS/Linuxでは次の通りです。
 
 ```bash
 source venv/bin/activate
 ```
 
-Install all the libraries you need for this tutorial:
+このチュートリアルに必要なライブラリをすべてインストールします。
 
 ```bash
 pip install requests beautifulsoup4 pandas jupyter seaborn
 ```
 
-These libraries serve the following purposes:
+これらのライブラリは以下の目的で使用します。
 
-- [**`requests`**](https://requests.readthedocs.io/en/latest/): To perform HTTP requests.
-- [**`beautifulsoup4`**](https://beautiful-soup-4.readthedocs.io/en/latest/): For parsing HTML and XML documents.
-- [**`pandas`**](https://pandas.pydata.org/): A powerful data manipulation and analysis library, ideal for working with structured data like CSV files or tables.
-- [**`jupyter`**](https://pypi.org/project/jupyter/): A web-based interactive development environment for running and sharing Python code, great for analysis and visualization.
-- [**`seaborn`**](https://seaborn.pydata.org/): A Python data visualization library based on [Matplotlib](https://matplotlib.org/).
+- [**`requests`**](https://requests.readthedocs.io/en/latest/): HTTPリクエストを実行するためです。
+- [**`beautifulsoup4`**](https://beautiful-soup-4.readthedocs.io/en/latest/): HTMLおよびXMLドキュメントを解析するためです。
+- [**`pandas`**](https://pandas.pydata.org/): 強力なデータ操作・分析ライブラリで、CSVファイルやテーブルのような構造化データの取り扱いに最適です。
+- [**`jupyter`**](https://pypi.org/project/jupyter/): Pythonコードを実行・共有するためのWebベースの対話型開発環境で、分析や可視化に適しています。
+- [**`seaborn`**](https://seaborn.pydata.org/): [Matplotlib](https://matplotlib.org/)をベースにしたPythonのデータ可視化ライブラリです。
 
-Enter the `scraper/` folder:
+`scraper/`フォルダに入ります。
 
 ```bash
 cd scraper
 ```
 
-Initialize a new Jupyter Notebook with this command:
+次のコマンドで新しいJupyter Notebookを初期化します。
 
 ```bash
 jupyter notebook
 ```
 
-You can now access your Jupyter Notebook App via the `locahost:8888`.
+これで`locahost:8888`からJupyter Notebook Appにアクセスできます。
 
-Create a new file by clicking on the “New > Python 3” option:
+“New > Python 3”オプションをクリックして新しいファイルを作成します。
 
 ![Creating a new Jupyter Notebook file](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-84.png)
 
-The new file will be automatically called `untitled.ipynb`. Rename it to `analysis.ipynb` in the dashboard:
+新しいファイルは自動的に`untitled.ipynb`という名前になります。ダッシュボードで`analysis.ipynb`にリネームします。
 
 ![Renaming a Jupyter Notebook file](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-83.png)
 
-Here is your project's structure at the end of this step:
+このステップ終了時点でのプロジェクト構成は次の通りです。
 
 ```
 scraper/
@@ -125,13 +125,13 @@ scraper/
 
 ### Step 2: Define the Target Page
 
-Let's scrape the data from the website [worldometer](https://www.worldometers.info/) and use the target page related to [CO2 emissions in the United States](https://www.worldometers.info/co2-emissions/us-co2-emissions/) per year that provides this tabular data:
+Webサイト[worldometer](https://www.worldometers.info/)からデータをスクレイピングし、年ごとの[米国のCO2排出量](https://www.worldometers.info/co2-emissions/us-co2-emissions/)に関連するターゲットページを使用します。このページは次の表形式データを提供しています。
 
 ![The tabular data about the C02 emissions per year in United States](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-82.png)
 
 ### Step 3: Retrieve the Data
 
-Here is Python code to retrieve the data from the target page and save into a CSV file:
+以下は、ターゲットページからデータを取得してCSVファイルに保存するPythonコードです。
 
 ```python
 import requests
@@ -171,23 +171,23 @@ with open(csv_file, mode="w", newline="", encoding="utf-8") as file:
 print(f"Data has been saved to {csv_file}")
 ```
 
-Here is what this code does:
+このコードの動作は以下の通りです。
 
-- It uses the `requests` library to send a GET request to the target page via the `requests.get()` method, then checks for request errors via the `response.raise_for_status()` method.
-- It uses `BeautifulSoup` to parse the HTML content by instantiating the `BeautifulSoup()` class and by finding the `table` selector with the `soup.find()` method. In particular, this method is useful to locate the table containing the data.
-- It uses a list comprehension to extract the table’s header.
-- It uses a `for` loop to retrieve all the data from the table while skipping the header row.
-- Finally, it opens a new CVS file and appends there all the data retrieved.
+- `requests`ライブラリを使用して、`requests.get()`メソッドでターゲットページにGETリクエストを送信し、`response.raise_for_status()`メソッドでリクエストエラーを確認します。
+- `BeautifulSoup`を使用して、`BeautifulSoup()`クラスをインスタンス化し、`soup.find()`メソッドで`table`セレクタを見つけることでHTMLコンテンツを解析します。特にこのメソッドは、データを含むテーブルを特定するのに役立ちます。
+- リスト内包表記でテーブルのヘッダーを抽出します。
+- `for`ループを使用して、ヘッダー行をスキップしながらテーブルからすべてのデータを取得します。
+- 最後に、新しいCVSファイルを開き、取得したすべてのデータをそこに追記します。
 
-You can paste this code into a cell and run it by pressing `SHIFT+ENTER`.
+このコードをセルに貼り付け、`SHIFT+ENTER`を押して実行できます。
 
-Another way to run the cell is to select it and press the “Run” button in the dashboard:
+セルを実行する別の方法として、セルを選択してダッシュボードの“Run”ボタンを押す方法もあります。
 
 ![Running a cell in a Jupyter Notebook](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-81.png)
 
 ### Step 4: Ensure Data Is Correct
 
-Open the CSV file with the saved data and see if the conversion was correct. To do that, type the following code into a new cell:
+保存されたデータのCSVファイルを開き、変換が正しく行われたか確認します。そのために、新しいセルに次のコードを入力します。
 
 ```python
 import pandas as pd
@@ -200,18 +200,18 @@ df = pd.read_csv(csv_file)
 df.head()
 ```
 
-This code does the following:
+このコードは以下を行います。
 
-- Opens the CSV file as a data frame, thanks to `pandas`, with the `pd.read_csv()` method.
-- Prints the first five rows of the data frame with the `df.head()` method.
+- `pandas`の`pd.read_csv()`メソッドにより、CSVファイルをデータフレームとして開きます。
+- `df.head()`メソッドでデータフレームの先頭5行を表示します。
 
-This is the expected result:
+期待される結果は次の通りです。
 
 ![The first five rows of the data frame](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-80.png)
 
 ### Step 5: Visualize the Data
 
-Use `seaborn` to create a line chart that shows the trend of the C02 emissions over the years:
+`seaborn`を使用して、年ごとのC02排出量の傾向を示す折れ線グラフを作成します。
 
 ```python
 import seaborn as sns
@@ -243,37 +243,37 @@ plt.grid(True)
 plt.show()
 ```
 
-Here is what this code does:
+このコードの動作は以下の通りです。
 
-- It uses `pandas` to:
-    - Open the CSV file.
-    - Clean columns’ names by removing extra spaces with the `df.columns.str.strip().str.replace(' ', ' ')` method.
-    - Accesses the column “Fossil CO2 Emissions (tons)” and converts data to numbers with the `df['Fossil CO2 Emissions (tons)'].str.replace(',', '').astype(float)` method.
-    - Accesses the column “Years”, converts the values to numbers with the `pd.to_numeric()` method, and sorts values into ascendant order with the `df.sort_values()` method.
-- It uses the libraries `matplotlib` and `seaborn` (which is built upon [`matplotlib`](https://matplotlib.org/), so it is installed when you install `seaborn`) to create the actual plot.
+- `pandas`を使用して:
+    - CSVファイルを開きます。
+    - `df.columns.str.strip().str.replace(' ', ' ')`メソッドで余分なスペースを削除し、列名をクリーンアップします。
+    - “Fossil CO2 Emissions (tons)”列にアクセスし、`df['Fossil CO2 Emissions (tons)'].str.replace(',', '').astype(float)`メソッドでデータを数値に変換します。
+    - “Years”列にアクセスし、`pd.to_numeric()`メソッドで値を数値に変換し、`df.sort_values()`メソッドで値を昇順に並べ替えます。
+- `matplotlib`および`seaborn`（[`matplotlib`](https://matplotlib.org/)をベースにしているため、`seaborn`をインストールすると一緒にインストールされます）を使用して、実際のプロットを作成します。
 
-Here is the expected result:
+期待される結果は次の通りです。
 
 ![The resulting plot](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-79.png)
 
 ### Step #6: Put It All Together
 
-Your entire Jupyter Notebook for web scraping will look like this:
+Webスクレイピング用のJupyter Notebook全体は次のようになります。
 
 ![The entire Jupyter Notebook document](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-78.png)
 
 ## Use Cases of Jupyter Notebook Web Scraping
 
-Here are some of the other possible uses for Jupyter Notebooks:
+以下は、Jupyter Notebooksの他の利用例です。
 
-- **Tutorials for internal education**. You can use Jupyter notebooks as step-by-step tutorials for junior developers. Use Markdown for explanations and cells—for individual code blocks that can be executed independently.
-- **Research and development**. When your scraping project requires multiple rounds of trial and error, you can keep all your tests in a single Notebook and use Markdown to highlight the tests that succeed.
-- **Data exploration**. The Jupyter library has been specifically designed for data exploration and analysis, as illustrated by the tutorial above.
+- **社内教育向けチュートリアル**。Jupyter notebooksを、ジュニア開発者向けのステップバイステップチュートリアルとして使用できます。説明にはMarkdownを使用し、セルには独立して実行できる個別のコードブロックを配置します。
+- **研究開発**。スクレイピングプロジェクトで複数回の試行錯誤が必要な場合、すべてのテストを単一のNotebookにまとめ、Markdownで成功したテストを強調できます。
+- **データ探索**。上記のチュートリアルが示すように、Jupyterライブラリはデータ探索と分析のために特別に設計されています。
 
 ## Conclusion
 
-While Jupyter Notebooks can be a powerful tool for web scraping, they are not the most efficient solution when it comes to scaling your web scraping operations or automating tasks.
+Jupyter NotebooksはWebスクレイピングにおいて強力なツールになり得ますが、Webスクレイピング運用のスケールやタスクの自動化という観点では、最も効率的なソリューションではありません。
 
-Bright Data's [Web Scrapers](https://brightdata.com/products/web-scraper) simplify and enhance your data collection efforts. They feature dedicated endpoints for 100+ domains, bulk request handling, automatic IP rotation, and [CAPTCHA solving](https://github.com/luminati-io/Captcha-solver).
+Bright Dataの[Web Scrapers](https://brightdata.jp/products/web-scraper)は、データ収集の取り組みを簡素化し、強化します。100以上のドメイン向けの専用エンドポイント、一括リクエスト処理、自動IPローテーション、そして[CAPTCHA solving](https://github.com/luminati-io/Captcha-solver)を備えています。
 
-Create a free Bright Data account today to try out our scraping solutions and test our proxies!
+今すぐ無料のBright Dataアカウントを作成して、当社のスクレイピングソリューションを試し、プロキシをテストしてください！
