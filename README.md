@@ -1,6 +1,6 @@
 # Jupyter NotebooksでのWebスクレイピング
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/) 
+[![Promo](https://github.com/bright-jp/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/) 
 
 このガイドでは、インタラクティブなコーディング、データ分析、可視化を行えるJupyter Notebooksを使用してWebスクレイピングを実行する方法を説明します。
 
@@ -20,15 +20,15 @@
 
 Jupyter Notebook Appは、Webブラウザ経由で[notebook documents](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html#notebook-document)を編集・実行できるサーバー/クライアントアプリケーションです。Jupyterの[notebook](https://docs.jupyter.org/en/latest/)は、「コンピューターコード、平易な言語による説明、データ、チャート、グラフや図、そしてインタラクティブなコントロールを組み合わせた共有可能なドキュメント」です。Notebookアプリケーションはデスクトップアプリとして実行することも、リモートサーバーにインストールすることもできます。
 
-![The Jupyter Notebook App interface](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-85.png)
+![The Jupyter Notebook App interface](https://github.com/bright-jp/jupyter-notebooks-web-scraping/blob/main/Images/image-85.png)
 
 Jupyter Notebooksは「kernel」を中心に構築されており、これはNotebookドキュメント内のコードを実行する計算エンジンです。具体的には、`ipython` kernelがPythonコードを実行しますが、他の言語向けのkernelも利用できます。
 
-![Launching a new document via the ipython kernel](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-86.png)
+![Launching a new document via the ipython kernel](https://github.com/bright-jp/jupyter-notebooks-web-scraping/blob/main/Images/image-86.png)
 
 アプリのダッシュボードでは、ローカルファイルの表示、既存のnotebook documentsのオープン、ドキュメントのkernel管理など、一般的な操作をサポートしています。
 
-![The Jupyter Notebooks’ dashboard](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-87.png)
+![The Jupyter Notebooks’ dashboard](https://github.com/bright-jp/jupyter-notebooks-web-scraping/blob/main/Images/image-87.png)
 
 ## Why Use Jupyter Notebooks for Web Scraping?
 
@@ -109,11 +109,11 @@ jupyter notebook
 
 “New > Python 3”オプションをクリックして新しいファイルを作成します。
 
-![Creating a new Jupyter Notebook file](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-84.png)
+![Creating a new Jupyter Notebook file](https://github.com/bright-jp/jupyter-notebooks-web-scraping/blob/main/Images/image-84.png)
 
 新しいファイルは自動的に`untitled.ipynb`という名前になります。ダッシュボードで`analysis.ipynb`にリネームします。
 
-![Renaming a Jupyter Notebook file](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-83.png)
+![Renaming a Jupyter Notebook file](https://github.com/bright-jp/jupyter-notebooks-web-scraping/blob/main/Images/image-83.png)
 
 このステップ終了時点でのプロジェクト構成は次の通りです。
 
@@ -127,7 +127,7 @@ scraper/
 
 Webサイト[worldometer](https://www.worldometers.info/)からデータをスクレイピングし、年ごとの[米国のCO2排出量](https://www.worldometers.info/co2-emissions/us-co2-emissions/)に関連するターゲットページを使用します。このページは次の表形式データを提供しています。
 
-![The tabular data about the C02 emissions per year in United States](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-82.png)
+![The tabular data about the C02 emissions per year in United States](https://github.com/bright-jp/jupyter-notebooks-web-scraping/blob/main/Images/image-82.png)
 
 ### Step 3: Retrieve the Data
 
@@ -183,7 +183,7 @@ print(f"Data has been saved to {csv_file}")
 
 セルを実行する別の方法として、セルを選択してダッシュボードの“Run”ボタンを押す方法もあります。
 
-![Running a cell in a Jupyter Notebook](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-81.png)
+![Running a cell in a Jupyter Notebook](https://github.com/bright-jp/jupyter-notebooks-web-scraping/blob/main/Images/image-81.png)
 
 ### Step 4: Ensure Data Is Correct
 
@@ -207,7 +207,7 @@ df.head()
 
 期待される結果は次の通りです。
 
-![The first five rows of the data frame](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-80.png)
+![The first five rows of the data frame](https://github.com/bright-jp/jupyter-notebooks-web-scraping/blob/main/Images/image-80.png)
 
 ### Step 5: Visualize the Data
 
@@ -254,13 +254,13 @@ plt.show()
 
 期待される結果は次の通りです。
 
-![The resulting plot](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-79.png)
+![The resulting plot](https://github.com/bright-jp/jupyter-notebooks-web-scraping/blob/main/Images/image-79.png)
 
 ### Step #6: Put It All Together
 
 Webスクレイピング用のJupyter Notebook全体は次のようになります。
 
-![The entire Jupyter Notebook document](https://github.com/luminati-io/jupyter-notebooks-web-scraping/blob/main/Images/image-78.png)
+![The entire Jupyter Notebook document](https://github.com/bright-jp/jupyter-notebooks-web-scraping/blob/main/Images/image-78.png)
 
 ## Use Cases of Jupyter Notebook Web Scraping
 
@@ -274,6 +274,6 @@ Webスクレイピング用のJupyter Notebook全体は次のようになりま�
 
 Jupyter NotebooksはWebスクレイピングにおいて強力なツールになり得ますが、Webスクレイピング運用のスケールやタスクの自動化という観点では、最も効率的なソリューションではありません。
 
-Bright Dataの[Web Scrapers](https://brightdata.jp/products/web-scraper)は、データ収集の取り組みを簡素化し、強化します。100以上のドメイン向けの専用エンドポイント、一括リクエスト処理、自動IPローテーション、そして[CAPTCHA solving](https://github.com/luminati-io/Captcha-solver)を備えています。
+Bright Dataの[Web Scrapers](https://brightdata.jp/products/web-scraper)は、データ収集の取り組みを簡素化し、強化します。100以上のドメイン向けの専用エンドポイント、一括リクエスト処理、自動IPローテーション、そして[CAPTCHA solving](https://github.com/bright-jp/Captcha-solver)を備えています。
 
 今すぐ無料のBright Dataアカウントを作成して、当社のスクレイピングソリューションを試し、プロキシをテストしてください！
